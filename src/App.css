@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Volkhov:wght@400;700&display=swap');
+
+:root {
+    /* Color */
+    --dark: #39363D;
+    --light: #FCF8FF;
+    --accent: #A37DE5;
+    --accent-mild: #A37DE566;
+
+    /* Typography */
+    --fw-500: 500; 
+    
+    --fs-xl: 5rem;
+    --fs-l:  1.5rem;
+    --fs-m:  1rem;
+    --fs-sm: 0.875rem;
+
+    /* Margin & Padding */
+    --auto: auto: 
+    --p-4: 0.5rem;
+    --p-8: 1rem;
+
+    /* Width & Height */
+    --full: 100%;
+    --vw: 100vw;
+    --w-5: 5rem;  
+    --w-56: 56rem;
+}
+
+#root {
+    background: var(--light);
+    color: var(--dark);
+}
+
+.App {
+    min-height: 100vh;
+
+    text-align: center;
+
+    max-width:var(--w-56);
+    margin: 0 auto;
+    padding-top: 0.5rem;
+
+    animation: fadeIn ease-in 0.5s; 
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+header {
+    padding-block: 0.5rem;
+}
+
+  main {
+      position: relative;
+      margin: 0 auto;
+  }  
+
+  /* Profile */
+  .profileView {
+        padding-block: 0.5rem;
+  }
+
+  .profileView > h1 {
+      font-family: 'Playfair Display', serif;      
+      font-weight: 500;
+      font-size: 5rem;
+
+      line-height: 2.75rem;
+      letter-spacing: 0.75rem;
+  }
+
+  .profilePicture {
+    width: 15rem;
+
+    border-radius: 100%;
+
+    /* needs to be changed for light and dark mode */
+    box-shadow:0px 0px 50px 10px rgba(0,0,0,0.2);
+  }
+
+  
+  /* Social Icons */
+  .socialIcons {
+      display: flex;
+      justify-content: space-evenly;
+
+      width: 100%;
+      padding-block: 1rem;
+  }
+
+  .socialIcons li {
+      font-size: 1.5rem;
+  }
+
+  .socialIcons li:hover {
+      color: var(--accent);
+  }
+
+  /* Links */
+.links {
+    width: 80%;
+    
+    margin-inline: auto;
+    display: grid; 
+    gap: 0.5rem;
+}
+
+.links li {
+    display: block;
+    width: 100%;
+
+    padding-block: 0.5rem;
+
+    /*border: 1px solid var(--dark);*/
+    box-shadow: 0.1em 0.1em 0 0 var(--dark),
+    inset 0.2em 0.2em 0 0 var(--dark);
+}
+
+.links li:hover,
+.links li:focus {
+    color: var(--light); 
+    box-shadow:  0 0 0 0 var(--dark),
+      inset 6em 3.5em 0 0 var(--dark);
+  }
+
+.links li a {
+    font-family: 'Volkhov', serif;
+    font-weight: 400;
+    display: block;
+
+    font-size: 1.2rem;
+}
+
+  /* footer */
+  footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+
+      padding: 0.5rem 1rem;
+      font-family: 'Volkhov', serif;
+  }
+
+@media (prefers-color-scheme: dark) {
+    #root {
+        background: var(--dark);
+        color: var(--light);
+    }
+
+    .links li{
+        border: 1px solid var(--light);
+    }
+
+    .links li:hover {
+        border: 1px solid var(--accent-mild); 
+        box-shadow: 0px 1px 50px 1px #000;
+    }
+
+   .profilePicture{
+        box-shadow:0px 0px 50px 10px var(--accent-mild);
+    }
+    
+    .links li {
+        box-shadow: 0.1em 0.1em 0 0 var(--light),
+        inset 0.2em 0.2em 0 0 var(--light);
+    }
+
+    .links li:hover,
+    .links li:focus {
+        color: var(--dark); 
+        box-shadow:  0 0 0 0 var(--light),
+        inset 6em 3.5em 0 0 var(--light);
+    }
+}
+
+@media (max-width:768px) {
+    .App{
+        width: 100%;
+    }
+}
